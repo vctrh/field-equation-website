@@ -29,17 +29,9 @@ main {
   position: relative;
 }
 
-.mark {
-  position: absolute;
-  top: 56px;
-  right: 48px;
-  width: 180px;
-  height: 180px;
-}
-
 header {
   max-width: 620px;
-  margin-top: 24px;
+  margin-top: 0;
   margin-bottom: 72px;
 }
 
@@ -147,14 +139,8 @@ footer p {
   main {
     padding: 40px 28px 48px;
   }
-  .mark {
-    width: 120px;
-    height: 120px;
-    top: 28px;
-    right: 28px;
-  }
   header {
-    margin-top: 128px;
+    margin-top: 0;
     margin-bottom: 48px;
   }
   .hero-suffix {
@@ -170,13 +156,6 @@ footer p {
 }
 
 @media (max-width: 420px) {
-  .mark {
-    width: 88px;
-    height: 88px;
-  }
-  header {
-    margin-top: 72px;
-  }
   .section-label {
     letter-spacing: 0.18em;
   }
