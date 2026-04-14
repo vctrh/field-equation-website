@@ -1,9 +1,10 @@
 :root {
-  --text: #1a1a1a;
-  --muted: #6b6b6b;
-  --accent: #1a1a1a;
-  --bg: #fafaf7;
-  --rule: #e5e5e0;
+  --paper: #f5f2ea;
+  --ink: #111111;
+  --red: #e63946;
+  --blue: #1d3557;
+  --yellow: #f4c842;
+  --rule: 3px;
 }
 
 * { box-sizing: border-box; }
@@ -11,74 +12,172 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Jost", "Futura", "Century Gothic", "URW Gothic", "Avenir Next", sans-serif;
   font-size: 17px;
-  line-height: 1.6;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "tnum" 1;
 }
 
 main {
-  max-width: 640px;
+  max-width: 880px;
   margin: 0 auto;
-  padding: 96px 24px 64px;
+  padding: 80px 48px 64px;
+  position: relative;
 }
 
-header h1 {
-  font-size: 2.25rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin: 0 0 0.75rem;
+.mark {
+  position: absolute;
+  top: 56px;
+  right: 48px;
+  width: 180px;
+  height: 180px;
 }
 
-header .tagline {
-  color: var(--muted);
-  font-size: 1.0625rem;
-  margin: 0 0 4rem;
+header {
+  max-width: 620px;
+  margin-top: 24px;
+  margin-bottom: 72px;
+}
+
+h1 {
+  margin: 0 0 1.5rem;
+  font-weight: 700;
+  line-height: 0.92;
+}
+
+.hero-name {
+  display: block;
+  font-size: clamp(3rem, 8.5vw, 5.75rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.hero-suffix {
+  display: block;
+  font-size: clamp(1.5rem, 4vw, 2.75rem);
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  margin-top: 0.35em;
+  font-weight: 700;
+}
+
+.hero-sub {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--ink);
+}
+
+hr {
+  border: 0;
+  height: var(--rule);
+  background: var(--ink);
+  max-width: 620px;
+  margin: 0 0 36px;
+}
+
+hr.footer-rule {
+  height: 1px;
+  background: var(--ink);
+  margin-top: 64px;
+  margin-bottom: 24px;
 }
 
 section {
-  margin-bottom: 2.5rem;
+  max-width: 620px;
+  margin-bottom: 40px;
 }
 
-section h2 {
-  font-size: 0.75rem;
-  font-weight: 600;
+.section-label {
+  font-size: 0.8125rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  margin: 0 0 0.75rem;
+  letter-spacing: 0.3em;
+  margin: 0 0 1rem;
+  color: var(--ink);
+}
+
+.section-label .num {
+  color: var(--red);
+  font-variant-numeric: tabular-nums;
 }
 
 section p {
   margin: 0;
+  font-size: 1.0625rem;
+  max-width: 52ch;
 }
 
 a {
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid var(--rule);
-  transition: border-color 120ms ease;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: color 120ms ease;
 }
 
 a:hover {
-  border-bottom-color: var(--accent);
+  color: var(--red);
 }
 
-footer {
-  margin-top: 5rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--rule);
-  color: var(--muted);
-  font-size: 0.8125rem;
+em {
+  font-style: italic;
+  font-weight: 400;
 }
 
-footer p { margin: 0; }
+footer p {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  color: var(--ink);
+}
 
-@media (max-width: 480px) {
-  main { padding: 56px 20px 40px; }
-  header h1 { font-size: 1.875rem; }
-  header .tagline { font-size: 1rem; margin-bottom: 3rem; }
+@media (max-width: 760px) {
+  main {
+    padding: 40px 28px 48px;
+  }
+  .mark {
+    width: 120px;
+    height: 120px;
+    top: 28px;
+    right: 28px;
+  }
+  header {
+    margin-top: 128px;
+    margin-bottom: 48px;
+  }
+  .hero-suffix {
+    letter-spacing: 0.22em;
+  }
+  .hero-sub {
+    letter-spacing: 0.15em;
+    font-size: 0.875rem;
+  }
+  hr { margin-bottom: 28px; }
+  section { margin-bottom: 32px; }
+  .section-label { letter-spacing: 0.22em; }
+}
+
+@media (max-width: 420px) {
+  .mark {
+    width: 88px;
+    height: 88px;
+  }
+  header {
+    margin-top: 72px;
+  }
+  .section-label {
+    letter-spacing: 0.18em;
+  }
 }
